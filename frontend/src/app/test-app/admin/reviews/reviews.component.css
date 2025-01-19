@@ -1,0 +1,105 @@
+/* Styles for a centered element */
+.centered {
+  width: 80%;
+  margin: 30px auto;
+  text-align: justify;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Styles for a top-left positioned element */
+.top-left {
+  margin: 10px 0px;
+  color: black;
+  font-size: 30px;
+  width: fit-content;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Flex spacer to create space between elements */
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+/* Styles for a star icon */
+.star {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* Styles for approved text */
+.approved-text {
+  font-weight: bold;
+}
+
+/* Styles for a button container */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 110%;
+  margin-top: 10px;
+}
+
+/* Styles for approve and cancel buttons */
+.approve-btn,
+.cancel-btn {
+  flex: 1;
+  margin: 0 5px;
+  width: 45%;
+}
+
+/* Styles for a grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+/* Styles for a review container */
+.review-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+/* Styles for review header */
+.review-header {
+  margin-bottom: 10px;
+}
+
+/* Styles for review body */
+.review-body {
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+/* Styles for rating */
+.rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styles for review text */
+.review-text {
+  margin: 0;
+  justify-content: center;
+}
+
+/* Styles for review footer */
+.review-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Styles for a button container */
+.button-container {
+  display: flex;
+}
+
+/* Styles for approve button */
+.approve-btn {
+  margin-right: 10px;
+}

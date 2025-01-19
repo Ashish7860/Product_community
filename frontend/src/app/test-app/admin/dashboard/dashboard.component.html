@@ -1,0 +1,63 @@
+<!-- The toolbar at the top of the page with a primary color -->
+<mat-toolbar color="accent">
+
+  <!-- Button that triggers the toggle method of the drawer component when clicked, with a material icon for menu -->
+  <button (click)="drawer.toggle()" mat-icon-button><mat-icon>menu</mat-icon></button>
+
+  <!-- Text with a link to the home page using the Angular router, styled as a material icon button -->
+  <span><a mat-icon-button routerLink="/" style="text-decoration: none;">Product Community Application</a></span>
+
+  <!-- Spacer to create some space between the elements -->
+  <span class="example-spacer"></span>
+
+  <!-- Container for content that should only be displayed when the user is logged in -->
+  <div *ngIf="loggedIn()">
+
+    <!-- Icon for the user account and a welcome message with the current user's name -->
+    <div>
+      <mat-icon color="accent">account_circle</mat-icon>&nbsp;
+      <a class="welcome-text" style="white-space: nowrap; text-decoration: none;">Welcome, {{ currentUser() }}</a>
+    </div>
+  </div>
+</mat-toolbar>
+
+<!-- Container for the main content and the side drawer -->
+<mat-drawer-container autosize>
+
+  <!-- Side drawer with a reference variable named 'drawer', initially opened and in side mode -->
+  <mat-drawer #drawer opened="true" mode="side">
+
+    <!-- List of navigation items in the side drawer -->
+    <mat-nav-list>
+      <mat-list-item>
+        <!-- Button with a material icon for the home page, linked using the Angular router -->
+        <button mat-button routerLink="/"><mat-icon>home</mat-icon>Home</button>
+      </mat-list-item>
+      <mat-list-item>
+        <!-- Button with a material icon for the users page in the admin section, linked using the Angular router -->
+        <button mat-button routerLink="/admin/users"><mat-icon>person</mat-icon>Users</button>
+      </mat-list-item>
+      <mat-list-item>
+        <!-- Button with a material icon for the products page in the admin section, linked using the Angular router -->
+        <button mat-button routerLink="/admin/products"><mat-icon>shopping_cart</mat-icon>Products</button>
+      </mat-list-item>
+      <mat-list-item>
+        <!-- Button with a material icon for the reviews page in the admin section, linked using the Angular router -->
+        <button mat-button routerLink="/admin/reviews"><mat-icon>star</mat-icon>Reviews</button>
+      </mat-list-item>
+      <mat-list-item>
+        <!-- Button with a material icon for the login page, linked using the Angular router -->
+        <button mat-button routerLink="/login"><mat-icon>logout</mat-icon>Logout</button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <!-- Content area that occupies the remaining space in the container -->
+  <mat-drawer-content>
+
+    <!-- Centered content area with a minimum height of 600px -->
+    <div style="text-align:center; min-height:600px;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,51 @@
+<mat-toolbar color="accent">
+  <span><a mat-icon-button routerLink="/">Product Community Application</a></span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button color="accent" routerLink="/home"><mat-icon>arrow_back</mat-icon></button>
+  <button mat-icon-button color="accent" routerLink="/login"><mat-icon>logout</mat-icon></button>
+</mat-toolbar>
+
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title text-center" style="font-size: 2rem; color: grey">Add Review</h1>
+          <div class="text-center">
+            <img class="img-fluid text-center" style="width: 60px;" src="/assets/rating.jpg" alt="">
+          </div>
+
+          <form (submit)="addReview(addPostForm)" #addPostForm="ngForm">
+            <div class="form-group">
+              <label style="font-weight: bold; color: grey;" for="productCode">Product Code</label>
+              <textarea class="form-control" id="productCode" placeholder="Code" required ngModel name="productCode"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label style="font-weight: bold; color: grey;" for="productName">Product Name</label>
+              <textarea class="form-control" id="productName" placeholder="Name" required ngModel name="productName"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label style="font-weight: bold; color: grey;" for="rating">Product Rating</label>
+              <select class="col-sm-9 form-control" id="rating" [(ngModel)]="rating" name="rating">
+                <option *ngFor="let option of ratingOptions" [value]="option">{{ option }}</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label style="font-weight: bold; color: grey;" for="review">Product Review</label>
+              <textarea class="col-sm-9 form-control" id="review" minlength="20" maxlength="400" pattern="[a-zA-Z]+" placeholder="Post Content" required ngModel name="review" style="overflow-wrap: break-word;"></textarea>
+            </div>
+
+            <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+            <div class="text-right">
+              <button type="submit" class="btn btn-info mr-3">Add</button>
+              <button type="reset" class="btn btn-danger">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

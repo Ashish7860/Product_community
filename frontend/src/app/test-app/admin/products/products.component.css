@@ -1,0 +1,39 @@
+
+  .mat-card{
+    margin: 2%;
+  }
+  .mat-table {
+    width: 100%;
+  }
+  
+  .mat-cell,
+  .mat-header-cell {
+    padding: 8px 16px;
+  }
+  
+  .mat-header-row {
+    background-color: #f5f5f5;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-left {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-right {
+    display: flex;
+    /* align-items: center; */
+  }
+  
+  .header-cell{
+    background-color: #673ab7;
+    color: white;
+  }
+  
